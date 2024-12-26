@@ -1,0 +1,40 @@
+# analytics:
+#   outputs:
+#     dev:
+#       account: mygxwwi-ic57852
+#       database: analytics
+#       password: 653508feynman@Snowflake
+#       role: pc_dbt_role
+#       schema: public
+#       threads: 5
+#       type: snowflake
+#       user: feynmanjohn
+#       warehouse: pc_pc_dbt_wh
+#   target: dev
+
+
+
+
+analytics:
+  outputs:
+    dev:
+      account: "{{ env_var( 'DBT_ACCOUNT')}}"
+      database: analytics
+      password: "{{ env_var( 'DBT_PASSWORD')}}"
+      role: pc_dbt_role
+      schema: dbt_dev
+      threads: 4
+      type: snowflake
+      user: "{{ env_var( 'DBT_USER')}}"
+      warehouse: pc_dbt_wh
+    prod:
+      account: "{{ env_var( 'DBT_ACCOUNT')}}"
+      database: analytics
+      password: "{{ env_var( 'DBT_PASSWORD')}}"
+      role: pc_dbt_role
+      schema: dbt_dev
+      threads: 4
+      type: snowflake
+      user: "{{ env_var( 'DBT_USER')}}"
+      warehouse: pc_dbt_wh
+  target: dev
