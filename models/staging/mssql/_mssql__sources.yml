@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: src_mssql
+    description: ""
+    database: raw
+    schema: mssql
+    tables:
+      - name: buyinggroups
+        description: ""
+      - name: cities
+        description: ""
+      - name: colors
+        description: ""
+      - name: countries
+        description: ""
+      - name: customercategories
+        description: ""
+      - name: customers
+        description: ""
+      - name: customertransactions
+        description: ""
+      - name: orderlines
+        description: ""
+      - name: packagetypes
+        description: ""
+      - name: paymentmethods
+        description: ""
+      - name: people
+        description: ""
+      - name: stateprovinces
+        description: ""
+      - name: stockitems
+        description: ""
+      - name: suppliercategories
+        description: ""
+      - name: suppliers
+        description: ""
+      - name: transactiontypes
+        description: ""
