@@ -18,3 +18,69 @@ sources:
             description: ""
           - name: lasteditedby
             description: ""
+
+      - name: buyinggroups
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: buyinggroupid
+            description: ""
+          - name: buyinggroupname
+            description: ""
+      
+      - name: cities
+        description: ""
+        columns:
+          - name: cityid
+            description: ""
+          - name: validto
+            description: ""
+          - name: cityname
+            description: ""
+          - name: location
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: stateprovinceid
+            description: ""
+          - name: latestrecordedpopulation
+            description: ""
+      
+      - name: countries
+        description: ""
+        columns:
+          - name: border
+            description: ""
+          - name: region
+            description: ""
+          - name: validto
+            description: ""
+          - name: continent
+            description: ""
+          - name: countryid
+            description: ""
+          - name: subregion
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: formalname
+            description: ""
+          - name: countryname
+            description: ""
+          - name: countrytype
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: isoalpha3code
+            description: ""
+          - name: isonumericcode
+            description: ""
+          - name: latestrecordedpopulation
+            description: ""
