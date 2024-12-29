@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: mssql     
+    description: "" 
+    database: raw   
+    tables:
+      - name: colors
+        description: ""
+        columns:
+          - name: colorid
+            description: ""
+          - name: validto
+            description: ""
+          - name: colorname
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
