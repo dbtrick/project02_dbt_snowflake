@@ -85,4 +85,146 @@ sources:
           - name: latestrecordedpopulation
             description: ""
 
+      - name: customercategories
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: customercategoryid
+            description: ""
+          - name: customercategoryname
+            description: ""
+
+      - name: customers
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: faxnumber
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: customerid
+            description: ""
+          - name: websiteurl
+            description: ""
+          - name: creditlimit
+            description: ""
+          - name: deliveryrun
+            description: ""
+          - name: paymentdays
+            description: ""
+          - name: phonenumber
+            description: ""
+          - name: runposition
+            description: ""
+          - name: customername
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: postalcityid
+            description: ""
+          - name: buyinggroupid
+            description: ""
+          - name: deliverycityid
+            description: ""
+          - name: isoncredithold
+            description: ""
+          - name: isstatementsent
+            description: ""
+          - name: billtocustomerid
+            description: ""
+          - name: deliverylocation
+            description: ""
+          - name: deliverymethodid
+            description: ""
+          - name: postalpostalcode
+            description: ""
+          - name: accountopeneddate
+            description: ""
+          - name: customercategoryid
+            description: ""
+          - name: deliverypostalcode
+            description: ""
+          - name: postaladdressline1
+            description: ""
+          - name: postaladdressline2
+            description: ""
+          - name: deliveryaddressline1
+            description: ""
+          - name: deliveryaddressline2
+            description: ""
+          - name: primarycontactpersonid
+            description: ""
+          - name: alternatecontactpersonid
+            description: ""
+          - name: standarddiscountpercentage
+            description: ""
+
+      - name: customertransactions
+        description: ""
+        columns:
+          - name: invoiceid
+            description: ""
+          - name: taxamount
+            description: ""
+          - name: customerid
+            description: ""
+          - name: isfinalized
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: lasteditedwhen
+            description: ""
+          - name: paymentmethodid
+            description: ""
+          - name: transactiondate
+            description: ""
+          - name: finalizationdate
+            description: ""
+          - name: transactionamount
+            description: ""
+          - name: transactiontypeid
+            description: ""
+          - name: amountexcludingtax
+            description: ""
+          - name: outstandingbalance
+            description: ""
+          - name: customertransactionid
+            description: ""
+
+      - name: orderlines
+        description: ""
+        columns:
+          - name: orderid
+            description: ""
+          - name: taxrate
+            description: ""
+          - name: quantity
+            description: ""
+          - name: unitprice
+            description: ""
+          - name: description
+            description: ""
+          - name: orderlineid
+            description: ""
+          - name: stockitemid
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: packagetypeid
+            description: ""
+          - name: lasteditedwhen
+            description: ""
+          - name: pickedquantity
+            description: ""
+          - name: pickingcompletedwhen
+            description: ""
+
+  
+
       
