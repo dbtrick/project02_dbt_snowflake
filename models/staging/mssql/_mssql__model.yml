@@ -225,6 +225,80 @@ sources:
           - name: pickingcompletedwhen
             description: ""
 
+      - name: packagetypes
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: packagetypeid
+            description: ""
+          - name: packagetypename
+            description: ""
+
+      - name: paymentmethods
+        description: ""     
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: paymentmethodid
+            description: ""
+          - name: paymentmethodname
+            description: ""
+
+      - name: people
+        description: ""
+        columns:
+          - name: photo
+            description: ""
+          - name: validto
+            description: ""
+          - name: fullname
+            description: ""
+          - name: personid
+            description: ""
+          - name: faxnumber
+            description: ""
+          - name: logonname
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: isemployee
+            description: ""
+          - name: searchname
+            description: ""
+          - name: phonenumber
+            description: ""
+          - name: customfields
+            description: ""
+          - name: emailaddress
+            description: ""
+          - name: issystemuser
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: issalesperson
+            description: ""
+          - name: preferredname
+            description: ""
+          - name: hashedpassword
+            description: ""
+          - name: otherlanguages
+            description: ""
+          - name: userpreferences
+            description: ""
+          - name: ispermittedtologon
+            description: ""
+          - name: isexternallogonprovider
+            description: ""
+
   
 
       
