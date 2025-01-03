@@ -323,6 +323,150 @@ sources:
           - name: latestrecordedpopulation
             description: ""
 
+      - name: stockitems
+        description: ""
+        columns:
+          - name: size
+            description: ""
+          - name: tags
+            description: ""
+          - name: brand
+            description: ""
+          - name: photo
+            description: ""
+          - name: barcode
+            description: ""
+          - name: colorid
+            description: ""
+          - name: taxrate
+            description: ""
+          - name: validto
+            description: ""
+          - name: unitprice
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: supplierid
+            description: ""
+          - name: stockitemid
+            description: ""
+          - name: customfields
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: leadtimedays
+            description: ""
+          - name: searchdetails
+            description: ""
+          - name: stockitemname
+            description: ""
+          - name: unitpackageid
+            description: ""
+          - name: ischillerstock
+            description: ""
+          - name: outerpackageid
+            description: ""
+          - name: internalcomments
+            description: ""
+          - name: quantityperouter
+            description: ""
+          - name: marketingcomments
+            description: ""
+          - name: typicalweightperunit
+            description: ""
+          - name: recommendedretailprice
+            description: ""
+
+      - name: suppliercategories
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: suppliercategoryid
+            description: ""
+          - name: suppliercategoryname
+            description: ""
+
+      - name: suppliers
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: faxnumber
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: supplierid
+            description: ""
+          - name: websiteurl
+            description: ""
+          - name: paymentdays
+            description: ""
+          - name: phonenumber
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: postalcityid
+            description: ""
+          - name: suppliername
+            description: ""
+          - name: deliverycityid
+            description: ""
+          - name: bankaccountcode
+            description: ""
+          - name: bankaccountname
+            description: ""
+          - name: deliverylocation
+            description: ""
+          - name: deliverymethodid
+            description: ""
+          - name: internalcomments
+            description: ""
+          - name: postalpostalcode
+            description: ""
+          - name: bankaccountbranch
+            description: ""
+          - name: bankaccountnumber
+            description: ""
+          - name: supplierreference
+            description: ""
+          - name: deliverypostalcode
+            description: ""
+          - name: postaladdressline1
+            description: ""
+          - name: postaladdressline2
+            description: ""
+          - name: suppliercategoryid
+            description: ""
+          - name: deliveryaddressline1
+            description: ""
+          - name: deliveryaddressline2
+            description: ""
+          - name: bankinternationalcode
+            description: ""
+          - name: primarycontactpersonid
+            description: ""
+          - name: alternatecontactpersonid
+            description: ""
+
+      - name: transactiontypes
+        description: ""
+        columns:
+          - name: validto
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: transactiontypeid
+            description: ""
+          - name: transactiontypename
+            description: ""
+
   
 
       
