@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: website
+    description: ""
+    database: raw
+    tables:
+      - name: customers
+        description: ""
+        columns:
+          - name: cityname
+            description: ""
+          - name: faxnumber
+            description: ""
+          - name: customerid
+            description: ""
+          - name: websiteurl
+            description: ""
+          - name: deliveryrun
+            description: ""
+          - name: phonenumber
+            description: ""
+          - name: runposition
+            description: ""
+          - name: customername
+            description: ""
+          - name: deliverymethod
+            description: ""
+          - name: primarycontact
+            description: ""
+          - name: buyinggroupname
+            description: ""
+          - name: alternatecontact
+            description: ""
+          - name: deliverylocation
+            description: ""
+          - name: customercategoryname
+            description: ""
+
+      - name: suppliers
+        description: ""
+        columns:
+          - name: cityname
+            description: ""
+          - name: faxnumber
+            description: ""
+          - name: supplierid
+            description: ""
+          - name: websiteurl
+            description: ""
+          - name: phonenumber
+            description: ""
+          - name: suppliername
+            description: ""
+          - name: deliverymethod
+            description: ""
+          - name: primarycontact
+            description: ""
+          - name: alternatecontact
+            description: ""
+          - name: deliverylocation
+            description: ""
+          - name: supplierreference
+            description: ""
+          - name: suppliercategoryname
+            description: ""
