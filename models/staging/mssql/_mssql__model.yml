@@ -299,6 +299,30 @@ sources:
           - name: isexternallogonprovider
             description: ""
 
+      - name: stateprovinces
+        description: ""     
+        columns:
+          - name: border
+            description: ""
+          - name: validto
+            description: ""
+          - name: countryid
+            description: ""
+          - name: validfrom
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: salesterritory
+            description: ""
+          - name: stateprovinceid
+            description: ""
+          - name: stateprovincecode
+            description: ""
+          - name: stateprovincename
+            description: ""
+          - name: latestrecordedpopulation
+            description: ""
+
   
 
       
