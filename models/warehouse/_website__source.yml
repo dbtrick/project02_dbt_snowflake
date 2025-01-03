@@ -1,0 +1,12 @@
+version: 2   
+
+sources:
+  - name: src_website      
+    description: ""    
+    database: raw
+    schema: website      
+    tables:
+      - name: customers
+        description: ""
+      - name: suppliers
+        description: ""
