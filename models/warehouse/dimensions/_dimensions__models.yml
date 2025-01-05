@@ -3,3 +3,6 @@ version: 2
 models:
   - name: dim_city
     description: ""
+
+  - name: dim_customer
+    description: ""
