@@ -15,7 +15,7 @@ suppliercategorie as (
 final as (
 
   select 
-    {{ dbt_utils.generate_surrogate_key(['mssql_supplier.supplier_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['mssql_supplier.supplier_id'])}} as supplier_key,
 
     mssql_supplier.supplier_id,
     mssql_supplier.supplier_name,
