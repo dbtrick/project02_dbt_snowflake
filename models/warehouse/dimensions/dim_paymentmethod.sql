@@ -7,7 +7,7 @@ paymentmethod as (
 final as (
 
   select 
-    {{ dbt_utils.generate_surrogate_key(['paymentmethod.payment_method_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['paymentmethod.payment_method_id'])}} as payment_method_key,
 
     paymentmethod.payment_method_id,
     paymentmethod.payment_method_name,

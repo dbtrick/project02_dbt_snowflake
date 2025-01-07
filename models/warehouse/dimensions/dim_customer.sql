@@ -19,7 +19,7 @@ buyinggroups as (
 final as (
 
   select  
-    {{ dbt_utils.generate_surrogate_key(['mssql_customer.customer_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['mssql_customer.customer_id'])}} as customer_key,
 
     mssql_customer.customer_id,
     mssql_customer.customer_name,

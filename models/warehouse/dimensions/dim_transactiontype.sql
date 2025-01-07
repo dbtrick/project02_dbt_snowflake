@@ -7,7 +7,7 @@ transactiontype as (
 final as (
 
   select 
-    {{ dbt_utils.generate_surrogate_key(['transactiontype.transaction_type_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['transactiontype.transaction_type_id'])}} as transaction_type_key,
 
     transactiontype.transaction_type_id,
     transactiontype.transaction_type_name,
