@@ -15,7 +15,7 @@ countries as (
 final as (
 
   select
-    {{ dbt_utils.generate_surrogate_key(['cities.city_id']) }},
+    {{ dbt_utils.generate_surrogate_key(['cities.city_id']) }} as city_key,
 
     cities.city_id,
     cities.city_name,

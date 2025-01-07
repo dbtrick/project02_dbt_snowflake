@@ -7,7 +7,7 @@ people as (
 final as (
 
   select
-    {{ dbt_utils.generate_surrogate_key(['people.person_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['people.person_id'])}} as employee_key,
 
     people.person_id,
     people.fullname as employee_name,

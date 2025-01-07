@@ -21,16 +21,21 @@ date_dimension AS (
         DAYOFWEEK(date_day) AS day_of_week,
         TO_CHAR(date_day, 'Month') AS month_name,
         TO_CHAR(date_day, 'Day') AS day_name,
+
         -- Weekend Check (1 = Sunday, 7 = Saturday)
         CASE WHEN DAYOFWEEK(date_day) IN (1, 7) THEN TRUE ELSE FALSE END AS is_weekend,
+
         -- Holiday Check (use your holiday table or hardcoded dates)
         CASE WHEN date_day IN ('2023-12-25', '2024-01-01') THEN TRUE ELSE FALSE END AS is_holiday,
+
         -- Year and Quarter Details
         EXTRACT(YEAR FROM date_day) AS year,
         EXTRACT(MONTH FROM date_day) AS month,
         EXTRACT(QUARTER FROM date_day) AS quarter,
+
         -- Weekday and Weekend Flags
         CASE WHEN DAYOFWEEK(date_day) IN (2, 3, 4, 5, 6) THEN TRUE ELSE FALSE END AS is_weekday,
+        
         -- Other custom fields like fiscal year and fiscal quarter can be added
         -- Example: Fiscal Year if the fiscal year starts in October
         CASE WHEN EXTRACT(MONTH FROM date_day) >= 10 THEN EXTRACT(YEAR FROM date_day) + 1 

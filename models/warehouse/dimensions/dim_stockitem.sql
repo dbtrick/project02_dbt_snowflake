@@ -15,7 +15,7 @@ color as (
 final as (
 
   select
-    {{ dbt_utils.generate_surrogate_key(['stockitem.stock_item_id'])}},
+    {{ dbt_utils.generate_surrogate_key(['stockitem.stock_item_id'])}} as stock_item_key,
 
     stockitem.stock_item_id,
     stockitem.stock_item_name,
