@@ -20,19 +20,19 @@ transaction_type as (
   select * from {{ ref('dim_transactiontype') }}
 ),
 
-{# date as (
+date as (
   select * from {{ ref('dim_date') }}
-), #}
+),
 
 final as (
 
   select
     {{ dbt_utils.generate_surrogate_key(['transaction.customer_transaction_id'])}} as transaction_key,
-    {# {{ dbt_utils.generate_surrogate_key(['date.date_day']) }} as date_key, #}
 
     customer.customer_key,
     payment_method.payment_method_key,
     transaction_type.transaction_type_key,
+    date.date_key,
 
     transaction.transaction_amount,
     transaction.tax_amount,
@@ -48,6 +48,8 @@ final as (
     on transaction.payment_method_id = payment_method.payment_method_id 
   left join transaction_type
     on transaction.transaction_type_id = transaction_type.transaction_type_id
+  left join date
+    on transaction.transaction_date = date.date_day
 )
 
 select * from final
