@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: transaction_summary
+    description: "One nig table containing information about the customers transaction information"

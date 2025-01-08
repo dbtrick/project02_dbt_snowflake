@@ -1,5 +1,5 @@
 version: 2
 
 models:
-  - name: fct_transaction
+  - name: fact_transaction
     description: ""
