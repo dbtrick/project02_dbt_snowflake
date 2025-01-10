@@ -1,0 +1,60 @@
+version: 2
+
+sources:
+  - name: gsheets
+    description: ""
+    database: raw
+    tables:
+      - name: invoices
+        description: ""
+        columns:
+          - name: orderid
+            description: ""
+          - name: comments
+            description: ""
+          - name: invoiceid
+            description: ""
+          - name: customerid
+            description: ""
+          - name: deliveryrun
+            description: ""
+          - name: invoicedate
+            description: ""
+          - name: runposition
+            description: ""
+          - name: iscreditnote
+            description: ""
+          - name: lasteditedby
+            description: ""
+          - name: totaldryitems
+            description: ""
+          - name: lasteditedwhen
+            description: ""
+          - name: contactpersonid
+            description: ""
+          - name: accountspersonid
+            description: ""
+          - name: billtocustomerid
+            description: ""
+          - name: creditnotereason
+            description: ""
+          - name: deliverymethodid
+            description: ""
+          - name: internalcomments
+            description: ""
+          - name: packedbypersonid
+            description: ""
+          - name: totalchilleritems
+            description: ""
+          - name: confirmedreceivedby
+            description: ""
+          - name: salespersonpersonid
+            description: ""
+          - name: deliveryinstructions
+            description: ""
+          - name: returneddeliverydata
+            description: ""
+          - name: confirmeddeliverytime
+            description: ""
+          - name: customerpurchaseordernumber
+            description: ""
