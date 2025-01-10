@@ -1,0 +1,10 @@
+ version: 2
+
+sources:
+  - name: src_gsheets
+    description: ""
+    database: raw
+    schema: gsheets
+    tables:
+      - name: invoices
+        description: ""
