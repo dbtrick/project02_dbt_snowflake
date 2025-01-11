@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: ["staging"]  # Trigger the workflow on pushes to the staging branch
+  pull_request:
+    branches: ["main"]  # Trigger the workflow on pull requests targeting the main branch
+  workflow_dispatch:  # Allow manual workflow runs
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      DBT_USER: ${{ secrets.DBT_USER }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+      DBT_ACCOUNT: ${{ secrets.DBT_ACCOUNT }}
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dbt
+        run: pip3 install dbt-snowflake
+
+      - name: Install dbt packages
+        run: dbt deps
+
+      - name: Deploy & Test Models (dev)
+        run: dbt build --profiles-dir . --target dev

@@ -8,9 +8,9 @@ customer as (
   select * from {{ ref('dim_customer') }}
 ),
 
-{# invoice as (
-  select * from {{ ref('model_name') }}
-) #}
+invoice as (
+  select * from {{ ref('stg_gsheets__invoices') }}
+),
 
 payment_method as (
   select * from {{ ref('dim_paymentmethod') }}
@@ -28,6 +28,7 @@ final as (
 
   select
     {{ dbt_utils.generate_surrogate_key(['transaction.customer_transaction_id'])}} as transaction_key,
+    {{ dbt_utils.generate_surrogate_key(['invoice.invoice_id']) }} as invoice_key,
 
     customer.customer_key,
     payment_method.payment_method_key,
@@ -44,6 +45,8 @@ final as (
 
   left join customer
     on transaction.customer_id = customer.customer_id
+  left join invoice
+    on transaction.invoice_id = invoice.invoice_id
   left join payment_method
     on transaction.payment_method_id = payment_method.payment_method_id 
   left join transaction_type
