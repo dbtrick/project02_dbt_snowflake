@@ -1,4 +1,4 @@
-with
+{# with
 
 transaction as (
   select * from {{ ref('fact_transaction') }}
@@ -24,4 +24,4 @@ final as (
 
   select 
 
-)
+) #}
