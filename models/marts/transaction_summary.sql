@@ -8,9 +8,9 @@ customer as (
   select * from {{ ref('dim_customer') }}
 ),
 
-{# invoice as (
-  select * from {{ ref('model_name') }}
-) #}
+invoice as (
+  select * from {{ source('src_gsheets', 'invoices') }}
+),
 
 payment_method as (
   select * from {{ ref('dim_paymentmethod') }}
