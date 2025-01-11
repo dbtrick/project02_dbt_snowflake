@@ -2,13 +2,11 @@ name: CI
 
 on:
   push:
-    branches: ["staging"]  # Trigger the workflow on pushes to the staging branch
-  pull_request:
-    branches: ["main"]  # Trigger the workflow on pull requests targeting the main branch
-  workflow_dispatch:  # Allow manual workflow runs
+    branches: ["staging"]  # Trigger workflow on pushes to the staging branch
+  workflow_dispatch:        # Allow manual triggering of the workflow
 
 permissions:
-  contents: write
+  contents: write  # Required to create pull requests
 
 jobs:
   build-and-deploy:
@@ -35,3 +33,15 @@ jobs:
 
       - name: Deploy & Test Models (dev)
         run: dbt build --profiles-dir . --target dev
+
+      - name: Create Pull Request to Main
+        if: success()  # Only run this step if all previous steps succeeded
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automated Pull Request from staging to main"
+          branch: staging
+          base: main
+          title: "Automated Pull Request: Staging to Main"
+          body: |
+            This pull request was automatically created after successful CI workflow on the `staging` branch.
