@@ -1,11 +1,10 @@
 name: CI
 
 on:
-  push:
-    branches: ["staging"]  # Trigger the workflow on pushes to the staging branch
   pull_request:
-    branches: ["main"]  # Trigger the workflow on pull requests targeting the main branch
-  workflow_dispatch:  # Allow manual workflow runs
+    branches: ["main"]
+
+  workflow_dispatch:
 
 permissions:
   contents: write
