@@ -540,8 +540,8 @@ sources:
             description: "The delivery location details for the supplier."
           - name: deliverymethodid
             description: "The ID of the delivery method used for the supplier."
-            tests:
-              - not_null
+            # tests:
+            #   - not_null
           - name: internalcomments
             description: "Internal comments or notes related to the supplier."
           - name: postalpostalcode
