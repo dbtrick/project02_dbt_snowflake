@@ -436,11 +436,11 @@ sources:
             description: "The date when the stock item becomes valid."
           - name: supplierid
             description: "ID referencing the supplier providing the stock item."
-            tests:
-              # - not_null
-              # - relationships:
-              #     to: ref('suppliers')
-              #     field: supplierid
+            # tests:
+            #   # - not_null
+            #   # - relationships:
+            #   #     to: ref('suppliers')
+            #   #     field: supplierid
           - name: stockitemid
             description: "Unique identifier for the stock item."
             tests:
