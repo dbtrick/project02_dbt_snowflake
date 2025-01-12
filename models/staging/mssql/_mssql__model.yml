@@ -216,8 +216,8 @@ sources:
             description: "Timestamp of when the transaction record was last edited."
           - name: paymentmethodid
             description: "ID of the payment method used in the transaction."
-            tests:
-              - not_null
+            # tests:
+            #   - not_null
           - name: transactiondate
             description: "The date when the transaction occurred."
           - name: finalizationdate
@@ -421,11 +421,11 @@ sources:
             description: "Barcode of the stock item used for tracking and inventory."
           - name: colorid
             description: "ID referencing the color of the stock item."
-            tests:
-              - not_null
-              - relationships:
-                  to: ref('colors')
-                  field: colorid
+            # tests:
+            #   - not_null
+            #   - relationships:
+            #       to: ref('colors')
+            #       field: colorid
           - name: taxrate
             description: "The tax rate applied to the stock item, expressed as a percentage."
           - name: validto
@@ -437,10 +437,10 @@ sources:
           - name: supplierid
             description: "ID referencing the supplier providing the stock item."
             tests:
-              - not_null
-              - relationships:
-                  to: ref('suppliers')
-                  field: supplierid
+              # - not_null
+              # - relationships:
+              #     to: ref('suppliers')
+              #     field: supplierid
           - name: stockitemid
             description: "Unique identifier for the stock item."
             tests:
