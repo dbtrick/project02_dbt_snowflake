@@ -6,466 +6,599 @@ sources:
     database: raw   
     tables:
       - name: colors
-        description: ""
+        description: "Contains information about color options available for products, including their validity dates and edit history."
         columns:
           - name: colorid
-            description: ""
+            description: "Unique identifier for the color."
+            tests:
+              - not_null
+              - unique
           - name: validto
-            description: ""
+            description: "The date when the color's data is no longer valid."
           - name: colorname
-            description: ""
+            description: "The name of the color."
           - name: validfrom
-            description: ""
+            description: "The date when the color's data becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the color record."
+            tests:
+              - not_null
+
 
       - name: buyinggroups
-        description: ""
+        description: "Contains details about buying groups, which are collections of customers that purchase goods together for discounts or other benefits."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the buying group's data is no longer valid."
           - name: validfrom
-            description: ""
+            description: "The date when the buying group's data becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the buying group record."
           - name: buyinggroupid
-            description: ""
+            description: "Unique identifier for the buying group."
+            tests:
+              - not_null
           - name: buyinggroupname
-            description: ""
+            description: "The name of the buying group."
+
       
       - name: cities
-        description: ""
+        description: "Contains information about cities, including their locations, populations, and the state or province they belong to."
         columns:
           - name: cityid
-            description: ""
+            description: "Unique identifier for the city."
+            tests:
+              - not_null
           - name: validto
-            description: ""
+            description: "The date when the city's data is no longer valid."
           - name: cityname
-            description: ""
+            description: "The name of the city."
           - name: location
-            description: ""
+            description: "Geographical location of the city (e.g., latitude and longitude)."
           - name: validfrom
-            description: ""
+            description: "The date when the city's data becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the city record."
+            tests:
+              - not_null
           - name: stateprovinceid
-            description: ""
+            description: "ID of the state or province the city belongs to."
+            tests:
+              - not_null
           - name: latestrecordedpopulation
-            description: ""
+            description: "The most recent recorded population of the city."
+
       
       - name: countries
-        description: ""
+        description: "Contains details about countries, including their geographical and political attributes."
         columns:
           - name: border
-            description: ""
+            description: "The countries that share a border with the country."
           - name: region
-            description: ""
+            description: "The region to which the country belongs."
           - name: validto
-            description: ""
+            description: "The date when the country's data is no longer valid."
           - name: continent
-            description: ""
+            description: "The continent to which the country belongs."
           - name: countryid
-            description: ""
+            description: "Unique identifier for the country."
+            tests:
+              - not_null
           - name: subregion
-            description: ""
+            description: "The subregion of the country."
           - name: validfrom
-            description: ""
+            description: "The date when the country's data becomes valid."
           - name: formalname
-            description: ""
+            description: "The official formal name of the country."
           - name: countryname
-            description: ""
+            description: "The commonly used name of the country."
           - name: countrytype
-            description: ""
+            description: "The type of country (e.g., republic, kingdom)."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the country record."
           - name: isoalpha3code
-            description: ""
+            description: "The ISO 3166-1 alpha-3 code of the country."
           - name: isonumericcode
-            description: ""
+            description: "The ISO 3166-1 numeric code of the country."
           - name: latestrecordedpopulation
-            description: ""
+            description: "The most recent recorded population of the country."
+
 
       - name: customercategories
-        description: ""
+        description: "Contains information about customer categories, which are used to group customers based on certain characteristics."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the customer category is no longer valid."
           - name: validfrom
-            description: ""
+            description: "The date when the customer category becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the customer category record."
+            tests:
+              - not_null
           - name: customercategoryid
-            description: ""
+            description: "Unique identifier for the customer category."
+            tests:
+              - not_null
+              - unique
           - name: customercategoryname
-            description: ""
+            description: "Name of the customer category."
+
 
       - name: customers
-        description: ""
+        description: "Contains information about customers, including contact details, billing information, and credit terms."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the customer account is no longer valid."
           - name: faxnumber
-            description: ""
+            description: "The fax number associated with the customer."
           - name: validfrom
-            description: ""
+            description: "The date when the customer account becomes valid."
           - name: customerid
-            description: ""
+            description: "Unique identifier for the customer."
+            tests:
+              - not_null
           - name: websiteurl
-            description: ""
+            description: "The website URL of the customer."
           - name: creditlimit
-            description: ""
+            description: "The maximum credit limit allowed for the customer."
           - name: deliveryrun
-            description: ""
+            description: "The delivery run number associated with the customer."
           - name: paymentdays
-            description: ""
+            description: "The number of days the customer is allowed for payment."
           - name: phonenumber
-            description: ""
+            description: "The phone number of the customer."
           - name: runposition
-            description: ""
+            description: "The position of the customer in the delivery run."
           - name: customername
-            description: ""
+            description: "The name of the customer."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the customer record."
+            tests:
+              - not_null
           - name: postalcityid
-            description: ""
+            description: "ID of the postal city associated with the customer's billing address."
           - name: buyinggroupid
-            description: ""
+            description: "ID of the buying group the customer belongs to."
           - name: deliverycityid
-            description: ""
+            description: "ID of the city associated with the customer's delivery address."
           - name: isoncredithold
-            description: ""
+            description: "Indicates whether the customer account is on credit hold (true/false)."
           - name: isstatementsent
-            description: ""
+            description: "Indicates whether the customer statement has been sent (true/false)."
           - name: billtocustomerid
-            description: ""
+            description: "ID of the customer to whom the bill is sent."
           - name: deliverylocation
-            description: ""
+            description: "The delivery location for the customer."
           - name: deliverymethodid
-            description: ""
+            description: "ID of the delivery method used for the customer."
           - name: postalpostalcode
-            description: ""
+            description: "Postal code of the customer's billing address."
           - name: accountopeneddate
-            description: ""
+            description: "The date when the customer's account was opened."
           - name: customercategoryid
-            description: ""
+            description: "ID of the category the customer belongs to."
           - name: deliverypostalcode
-            description: ""
+            description: "Postal code of the customer's delivery address."
           - name: postaladdressline1
-            description: ""
+            description: "First line of the customer's billing address."
           - name: postaladdressline2
-            description: ""
+            description: "Second line of the customer's billing address."
           - name: deliveryaddressline1
-            description: ""
+            description: "First line of the customer's delivery address."
           - name: deliveryaddressline2
-            description: ""
+            description: "Second line of the customer's delivery address."
           - name: primarycontactpersonid
-            description: ""
+            description: "ID of the primary contact person for the customer."
           - name: alternatecontactpersonid
-            description: ""
+            description: "ID of the alternate contact person for the customer."
           - name: standarddiscountpercentage
-            description: ""
+            description: "The standard discount percentage offered to the customer."
+
 
       - name: customertransactions
-        description: ""
+        description: "Contains transaction details for customers, including payment methods, transaction amounts, and other relevant financial information."
         columns:
           - name: invoiceid
-            description: ""
+            description: "Unique identifier for the invoice associated with the transaction."
           - name: taxamount
-            description: ""
+            description: "The amount of tax applied to the transaction."
           - name: customerid
-            description: ""
+            description: "ID of the customer who made the transaction."
+            tests:
+              - not_null
           - name: isfinalized
-            description: ""
+            description: "Indicates if the transaction has been finalized (true/false)."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the transaction record."
+            tests:
+              - not_null
           - name: lasteditedwhen
-            description: ""
+            description: "Timestamp of when the transaction record was last edited."
           - name: paymentmethodid
-            description: ""
+            description: "ID of the payment method used in the transaction."
+            tests:
+              - not_null
           - name: transactiondate
-            description: ""
+            description: "The date when the transaction occurred."
           - name: finalizationdate
-            description: ""
+            description: "The date when the transaction was finalized."
           - name: transactionamount
-            description: ""
+            description: "The total amount of the transaction, including tax."
           - name: transactiontypeid
-            description: ""
+            description: "ID of the type of transaction (e.g., sale, refund)."
           - name: amountexcludingtax
-            description: ""
+            description: "The amount of the transaction excluding tax."
           - name: outstandingbalance
-            description: ""
+            description: "The outstanding balance for the transaction, if any."
           - name: customertransactionid
-            description: ""
+            description: "Unique identifier for the customer transaction."
+            tests:
+              - not_null
+ 
 
       - name: orderlines
-        description: ""
+        description: "Contains details about individual order lines, including the ordered items, quantities, and pricing information."
         columns:
           - name: orderid
-            description: ""
+            description: "The ID of the order to which this line item belongs."
+            tests:
+              - not_null
           - name: taxrate
-            description: ""
+            description: "The tax rate applied to the order line."
           - name: quantity
-            description: ""
+            description: "The quantity of the item ordered."
           - name: unitprice
-            description: ""
+            description: "The price per unit of the ordered item."
           - name: description
-            description: ""
+            description: "A description of the item in the order line."
           - name: orderlineid
-            description: ""
+            description: "Unique identifier for the order line."
+            tests:
+              - not_null
+              - unique
           - name: stockitemid
-            description: ""
+            description: "ID of the stock item associated with the order line."
+            tests:
+              - not_null
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the order line record."
+            tests:
+              - not_null
           - name: packagetypeid
-            description: ""
+            description: "ID of the package type associated with the order line."
           - name: lasteditedwhen
-            description: ""
+            description: "Timestamp of when the order line was last edited."
           - name: pickedquantity
-            description: ""
+            description: "The quantity of the item that has been picked for shipping."
           - name: pickingcompletedwhen
-            description: ""
+            description: "Timestamp when the picking of the order line was completed."
+
 
       - name: packagetypes
-        description: ""
+        description: "Contains details about different package types available in the system."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the package type is no longer valid."
           - name: validfrom
-            description: ""
+            description: "The date when the package type becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the package type record."
+            tests:
+              - not_null
           - name: packagetypeid
-            description: ""
+            description: "Unique identifier for the package type."
+            tests:
+              - not_null
           - name: packagetypename
-            description: ""
+            description: "The name of the package type."
+            tests:
+              - not_null
+
 
       - name: paymentmethods
-        description: ""     
+        description: "Contains details about various payment methods used in the system."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the payment method is no longer valid."
           - name: validfrom
-            description: ""
+            description: "The date when the payment method becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the payment method record."
+            tests:
+              - not_null
           - name: paymentmethodid
-            description: ""
+            description: "Unique identifier for the payment method."
+            tests:
+              - not_null
           - name: paymentmethodname
-            description: ""
+            description: "The name of the payment method."
+            tests:
+              - not_null
+
 
       - name: people
-        description: ""
+        description: "Contains details about individuals, including personal and login information."
         columns:
           - name: photo
-            description: ""
+            description: "Photo or image of the person."
           - name: validto
-            description: ""
+            description: "The date when the person's record is no longer valid."
           - name: fullname
-            description: ""
+            description: "The full name of the person."
           - name: personid
-            description: ""
+            description: "Unique identifier for the person."
+            tests:
+              - not_null
           - name: faxnumber
-            description: ""
+            description: "Fax number associated with the person."
           - name: logonname
-            description: ""
+            description: "The login name used by the person to access the system."
           - name: validfrom
-            description: ""
+            description: "The date when the person's record becomes valid."
           - name: isemployee
-            description: ""
+            description: "Indicates if the person is an employee (true/false)."
           - name: searchname
-            description: ""
+            description: "Searchable name used for querying the person."
           - name: phonenumber
-            description: ""
+            description: "Phone number associated with the person."
           - name: customfields
-            description: ""
+            description: "Custom fields or additional attributes for the person."
           - name: emailaddress
-            description: ""
+            description: "Email address associated with the person."
           - name: issystemuser
-            description: ""
+            description: "Indicates if the person is a system user (true/false)."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the person's record."
+            tests:
+              - not_null
           - name: issalesperson
-            description: ""
+            description: "Indicates if the person is a salesperson (true/false)."
           - name: preferredname
-            description: ""
+            description: "The preferred name of the person."
           - name: hashedpassword
-            description: ""
+            description: "The hashed password used for authenticating the person."
           - name: otherlanguages
-            description: ""
+            description: "Other languages spoken by the person."
           - name: userpreferences
-            description: ""
+            description: "User-specific preferences for the person."
           - name: ispermittedtologon
-            description: ""
+            description: "Indicates if the person is permitted to log on to the system (true/false)."
           - name: isexternallogonprovider
-            description: ""
+            description: "Indicates if the person uses an external logon provider (true/false)."
+
 
       - name: stateprovinces
-        description: ""     
+        description: "Contains details about state or province information, including their codes, names, population, and related territories."
         columns:
           - name: border
-            description: ""
+            description: "Geographic border information of the state or province."
           - name: validto
-            description: ""
+            description: "The date when the state or province record is no longer valid."
           - name: countryid
-            description: ""
+            description: "ID referencing the country associated with the state or province."
+            tests:
+              - not_null
+              - relationships:
+                  to: ref('countries')
+                  field: countryid
           - name: validfrom
-            description: ""
+            description: "The date when the state or province record becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the state or province record."
+            tests:
+              - not_null
           - name: salesterritory
-            description: ""
+            description: "The sales territory associated with the state or province."
           - name: stateprovinceid
-            description: ""
+            description: "Unique identifier for the state or province."
+            tests:
+              - not_null
+              - unique
           - name: stateprovincecode
-            description: ""
+            description: "The unique code representing the state or province."
+            tests:
+              - not_null
           - name: stateprovincename
-            description: ""
+            description: "The name of the state or province."
+            tests:
+              - not_null
           - name: latestrecordedpopulation
-            description: ""
+            description: "The latest recorded population of the state or province."
+
 
       - name: stockitems
-        description: ""
+        description: "Contains details about the stock items, such as pricing, supplier, and other attributes."
         columns:
           - name: size
-            description: ""
+            description: "The size or dimensions of the stock item."
           - name: tags
-            description: ""
+            description: "Tags or keywords associated with the stock item."
           - name: brand
-            description: ""
+            description: "The brand name of the stock item."
           - name: photo
-            description: ""
+            description: "URL or reference to the stock item's photo."
           - name: barcode
-            description: ""
+            description: "Barcode of the stock item used for tracking and inventory."
           - name: colorid
-            description: ""
+            description: "ID referencing the color of the stock item."
+            tests:
+              - not_null
+              - relationships:
+                  to: ref('colors')
+                  field: colorid
           - name: taxrate
-            description: ""
+            description: "The tax rate applied to the stock item, expressed as a percentage."
           - name: validto
-            description: ""
+            description: "The date when the stock item is no longer valid."
           - name: unitprice
-            description: ""
+            description: "The price per unit of the stock item."
           - name: validfrom
-            description: ""
+            description: "The date when the stock item becomes valid."
           - name: supplierid
-            description: ""
+            description: "ID referencing the supplier providing the stock item."
+            tests:
+              - not_null
+              - relationships:
+                  to: ref('suppliers')
+                  field: supplierid
           - name: stockitemid
-            description: ""
+            description: "Unique identifier for the stock item."
+            tests:
+              - not_null
           - name: customfields
-            description: ""
+            description: "Custom fields or additional attributes for the stock item."
           - name: lasteditedby
-            description: ""
+            description: "ID of the user who last edited the stock item record."
+            tests:
+              - not_null
           - name: leadtimedays
-            description: ""
+            description: "The lead time in days required to restock the item."
           - name: searchdetails
-            description: ""
+            description: "Searchable details or metadata about the stock item."
           - name: stockitemname
-            description: ""
+            description: "The name of the stock item."
+            tests:
+              - not_null
           - name: unitpackageid
-            description: ""
+            description: "ID referencing the packaging unit for the stock item."
+            tests:
+              - not_null
           - name: ischillerstock
-            description: ""
+            description: "Indicates if the stock item requires chiller storage (true/false)."
           - name: outerpackageid
-            description: ""
+            description: "ID referencing the outer packaging unit of the stock item."
           - name: internalcomments
-            description: ""
+            description: "Internal comments or notes about the stock item."
           - name: quantityperouter
-            description: ""
+            description: "The quantity of units per outer package."
           - name: marketingcomments
-            description: ""
+            description: "Marketing comments or notes related to the stock item."
           - name: typicalweightperunit
-            description: ""
+            description: "The typical weight per unit of the stock item."
           - name: recommendedretailprice
-            description: ""
+            description: "The recommended retail price for the stock item."
+
 
       - name: suppliercategories
-        description: ""
+        description: "Table containing information about supplier categories."
         columns:
           - name: validto
-            description: ""
+            description: "The date and time when the supplier category becomes invalid."
           - name: validfrom
-            description: ""
+            description: "The date and time when the supplier category becomes valid."
           - name: lasteditedby
-            description: ""
+            description: "The ID of the user who last edited the supplier category."
+            tests:
+              - not_null
           - name: suppliercategoryid
-            description: ""
+            description: "The unique identifier for the supplier category."
+            tests:
+              - not_null
+              - unique
           - name: suppliercategoryname
-            description: ""
+            description: "The name of the supplier category."
+
 
       - name: suppliers
-        description: ""
+        description: "Contains details about the suppliers including contact information, addresses, and financial data."
         columns:
           - name: validto
-            description: ""
+            description: "The date when the supplier's record is valid until."
           - name: faxnumber
-            description: ""
+            description: "The supplier's fax number."
           - name: validfrom
-            description: ""
+            description: "The date when the supplier's record becomes valid."
           - name: supplierid
-            description: ""
+            description: "Unique identifier for the supplier."
+            tests:
+              - not_null
           - name: websiteurl
-            description: ""
+            description: "The website URL of the supplier."
           - name: paymentdays
-            description: ""
+            description: "The agreed number of days within which payments should be made to the supplier."
           - name: phonenumber
-            description: ""
+            description: "The supplier's primary phone number."
           - name: lasteditedby
-            description: ""
+            description: "The ID of the person who last edited the supplier's record."
+            tests:
+              - not_null
           - name: postalcityid
-            description: ""
+            description: "The ID of the city associated with the supplier's postal address."
+            tests:
+              - not_null
           - name: suppliername
-            description: ""
+            description: "The name of the supplier."
           - name: deliverycityid
-            description: ""
+            description: "The ID of the city for delivery purposes."
+            tests:
+              - not_null
           - name: bankaccountcode
-            description: ""
+            description: "The bank account code for the supplier."
           - name: bankaccountname
-            description: ""
+            description: "The name of the supplier's bank account."
           - name: deliverylocation
-            description: ""
+            description: "The delivery location details for the supplier."
           - name: deliverymethodid
-            description: ""
+            description: "The ID of the delivery method used for the supplier."
+            tests:
+              - not_null
           - name: internalcomments
-            description: ""
+            description: "Internal comments or notes related to the supplier."
           - name: postalpostalcode
-            description: ""
+            description: "The postal code for the supplier's postal address."
           - name: bankaccountbranch
-            description: ""
+            description: "The branch of the supplier's bank account."
           - name: bankaccountnumber
-            description: ""
+            description: "The number of the supplier's bank account."
           - name: supplierreference
-            description: ""
+            description: "The supplier's reference code."
           - name: deliverypostalcode
-            description: ""
+            description: "The postal code for delivery purposes."
           - name: postaladdressline1
-            description: ""
+            description: "The first line of the supplier's postal address."
           - name: postaladdressline2
-            description: ""
+            description: "The second line of the supplier's postal address."
           - name: suppliercategoryid
-            description: ""
+            description: "The ID of the category to which the supplier belongs."
+            tests:
+              - not_null
           - name: deliveryaddressline1
-            description: ""
+            description: "The first line of the supplier's delivery address."
           - name: deliveryaddressline2
-            description: ""
+            description: "The second line of the supplier's delivery address."
           - name: bankinternationalcode
-            description: ""
+            description: "The supplier's international bank code."
           - name: primarycontactpersonid
-            description: ""
+            description: "The ID of the supplier's primary contact person."
+            tests:
+              - not_null
           - name: alternatecontactpersonid
-            description: ""
+            description: "The ID of the supplier's alternate contact person."
+
 
       - name: transactiontypes
-        description: ""
+        description: "This model contains data related to various transaction types and their details."
         columns:
-          - name: validto
-            description: ""
-          - name: validfrom
-            description: ""
-          - name: lasteditedby
-            description: ""
           - name: transactiontypeid
-            description: ""
+            description: "The unique identifier for each transaction type."
+            tests:
+              - not_null
           - name: transactiontypename
-            description: ""
+            description: "The name of the transaction type."
+            tests:
+              - not_null
+          - name: validto
+            description: "The date and time when the transaction type becomes invalid."
+            tests:
+              - not_null
+          - name: validfrom
+            description: "The date and time when the transaction type becomes valid."
+            tests:
+              - not_null
+          - name: lasteditedby
+            description: "The identifier of the user who last edited this record."
+            
+          
 
   
 
