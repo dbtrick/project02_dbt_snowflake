@@ -32,10 +32,10 @@ For this project, I collaborated with a sample client, Wide World Importers (WWI
 - **dbt for Transformation:** Orchestrate the data transformation process using dbt.
 
 ### [Data Visualization using Looker](https://lookerstudio.google.com/reporting/4b27a047-c5e6-4e6a-bd0e-f913677c2b79/page/Dub4D)
-- Enhanced sales insights with a detailed ”Contribution of Each Store to Total Sales” chart.
-- Boosted team performance through the ”Top Performing Employees” chart.
-- Improved customer retention strategies using ”Customer Engagement Levels” analysis.
-- Refined marketing strategies by identifying ”Most Popular DVD Rental Locations.”
+- Enhanced transaction insights with a detailed "Contribution of Each Payment Method to Total Transactions" chart.
+- Boosted customer insights through a "Top Spending Customer Categories" chart.
+- Improved revenue tracking using a "Transaction Trends by Type" analysis
+- Refined customer segmentation by identifying "Engagement Levels by Buying Group and Customer Category."
 
 
 
